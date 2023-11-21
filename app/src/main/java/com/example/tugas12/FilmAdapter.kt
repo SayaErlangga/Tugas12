@@ -3,6 +3,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.pertemuan12.Film
 import com.example.tugas12.databinding.FilmLayoutBinding
 
@@ -26,6 +27,10 @@ class FilmAdapter(private val onClickMember: OnClickMember) :
                 txtJudul.text = data.title
                 txtRating.text = data.rating
                 txtTag.text = data.tag
+
+                Glide.with(itemView.context)
+                    .load(data.url)
+                    .into(imgCover)
 
                 itemView.setOnClickListener {
                     onItemClick?.invoke(data)

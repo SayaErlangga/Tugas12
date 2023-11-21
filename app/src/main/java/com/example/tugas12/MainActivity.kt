@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var filmAdapter: FilmAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        title = "AnimeList"
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -56,6 +57,7 @@ class MainActivity : AppCompatActivity() {
                 // Intent to edit activity
                 val intent = Intent(this@MainActivity, ThirdActivity::class.java)
                 intent.putExtra("judulFilm", selectedData.title)
+                intent.putExtra("urlFilm", selectedData.url)
                 intent.putExtra("ratingFilm", selectedData.rating)
                 intent.putExtra("tagFilm", selectedData.tag)
                 intent.putExtra("idFilm", selectedData.id)

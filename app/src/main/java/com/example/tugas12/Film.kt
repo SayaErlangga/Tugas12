@@ -10,6 +10,8 @@ data class Film (
     @PrimaryKey(autoGenerate = true)
     @NonNull
     val id: Int = 0,
+    @ColumnInfo(name = "url")
+    val url: String,
 
     @ColumnInfo(name = "title")
     val title: String,

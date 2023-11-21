@@ -18,6 +18,7 @@ class SecondActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        title = "AnimeList"
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
         executorService = Executors.newSingleThreadExecutor()
@@ -26,7 +27,7 @@ class SecondActivity : AppCompatActivity() {
 
         with(binding){
                 btnInsert.setOnClickListener {
-                    insert(Film(title = edtJudul.text.toString(), rating = edtRating.text.toString(), tag = edtTag.text.toString()))
+                    insert(Film(url = imgCover.text.toString(), title = edtJudul.text.toString(), rating = edtRating.text.toString(), tag = edtTag.text.toString()))
                     finish()
                 }
             }
